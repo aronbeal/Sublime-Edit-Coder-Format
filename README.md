@@ -13,7 +13,7 @@ This Sublime Text plugin is responsible for applying Drupal coder formatting to 
 2. Restart Sublime Text 2
 
 ##Usage
-This plugin requires that you tell Sublime Text that you wish to use it explicitly. To do so, you need to have defined a project (more info: http://www.sublimetext.com/docs/2/projects.html) for the code you're working on.  Edit your project to include the following line: 
+This plugin requires that you tell Sublime Text that you wish to use it explicitly. To do so, you need to have defined a project (more info: http://www.sublimetext.com/docs/2/projects.html) for the code you're working on.  Edit your project to include the following line to the "settings" block: 
 
   <code>
     "coder_format_on_save": 1
