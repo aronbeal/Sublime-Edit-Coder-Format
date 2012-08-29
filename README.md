@@ -7,17 +7,19 @@ This Sublime Text plugin is responsible for applying Drupal coder formatting to 
 
 1. Clone git repo into your packages folder (mine is ~/Library/Application Support/Sublime Text 2/Packages):
 
+<code>
   $ cd ~/Library/Application Support/Sublime Text 2/Packages
   $ git clone https://github.com/sublimator/ZenCoding.git
+</code>
 
 2. Restart Sublime Text 2
 
 ##Usage
 This plugin requires that you tell Sublime Text that you wish to use it explicitly. To do so, you need to have defined a project (more info: http://www.sublimetext.com/docs/2/projects.html) for the code you're working on.  Edit your project to include the following line to the "settings" block: 
 
-  <code>
-    "coder_format_on_save": 1
-  </code>
+<code>
+  "coder_format_on_save": 1
+</code>
 
 Once the module sees this, it will apply coder formatting to the contents of the window in the forefront immediately prior to any save event.  Note that it will ignore anything that does not have the correct file suffix (currently *.php or *.module, may expand in the future).
 
