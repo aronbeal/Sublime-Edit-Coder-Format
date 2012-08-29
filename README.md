@@ -9,6 +9,7 @@ This Sublime Text plugin is responsible for applying Drupal coder formatting to 
 
 <code>
   $ cd ~/Library/Application Support/Sublime Text 2/Packages
+  
   $ git clone https://github.com/sublimator/ZenCoding.git
 </code>
 
