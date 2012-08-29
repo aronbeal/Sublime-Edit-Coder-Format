@@ -6,7 +6,6 @@ from tempfile import NamedTemporaryFile
 class CoderFormatOnSave(sublime_plugin.EventListener):
 
     def on_pre_save(self, view):
-        print "***************** BEGIN ********************"
         should_build = view.settings().get('coder_format_on_save')
         if should_build == 1:
             p = re.compile('^.*(module|php)$|')
