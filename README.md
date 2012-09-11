@@ -6,13 +6,11 @@ This Sublime Text plugin is responsible for applying Drupal coder formatting to 
 ### Mac OSX (Lion)
 
 1. Clone git repo into your packages folder (mine is ~/Library/Application Support/Sublime Text 2/Packages):
-
 <code>
   $ cd ~/Library/Application Support/Sublime Text 2/Packages
-  
+
   $ git clone https://github.com/sublimator/ZenCoding.git
 </code>
-
 2. Restart Sublime Text 2
 
 ##Usage
