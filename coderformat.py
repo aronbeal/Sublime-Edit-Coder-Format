@@ -1,24 +1,25 @@
-import sublime, sublime_plugin, re, os
+from sublime import *
+from sublime_plugin import *
+from re import compile
+from os import chdir
 from subprocess import Popen, PIPE
-from tempfile import NamedTemporaryFile
 
 
 class CoderFormat(sublime_plugin.TextCommand):
 
     def run(self, edit):
         if self.view.settings().get('coder_format') == 1:
-            p = re.compile('^.*(module|php|.install)$')
+            p = compile('^.*(module|php|.install)$')
             myfile = self.view.file_name()
-            project_folder = self.view.window().folders()[0]
             is_interesting = p.search(myfile)
-            
+
             if is_interesting.start() != is_interesting.end():
                 #buffer is non-empty
                 original_directory = os.curdir
-                os.chdir(sublime.packages_path())
-                os.chdir('CoderFormat')
+                chdir(sublime.packages_path())
+                chdir('CoderFormat')
                 try:
-                    print "Applying coder format to selection in file : " , myfile
+                    print "Applying coder format to selection in file : ", myfile
 
                     edit = self.view.begin_edit('coder_format')
                     bufferRegion = sublime.Region(0, self.view.size())
@@ -32,5 +33,3 @@ class CoderFormat(sublime_plugin.TextCommand):
                     self.view.end_edit(edit)
                 finally:
                     os.chdir(original_directory)
-    def description(self):
-        return "CoderFormatOnText Description";
