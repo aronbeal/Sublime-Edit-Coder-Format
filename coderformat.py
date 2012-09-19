@@ -1,7 +1,7 @@
-from sublime import *
-from sublime_plugin import *
+import sublime
+import sublime_plugin
 from re import compile
-from os import chdir
+from os import chdir,curdir,path
 from subprocess import Popen, PIPE
 
 
@@ -14,8 +14,9 @@ class CoderFormat(sublime_plugin.TextCommand):
             is_interesting = p.search(myfile)
 
             if is_interesting.start() != is_interesting.end():
+                print "Coder formatting file..."
                 #buffer is non-empty
-                original_directory = os.curdir
+                original_directory = curdir
                 chdir(sublime.packages_path())
                 chdir('CoderFormat')
                 try:
@@ -24,7 +25,7 @@ class CoderFormat(sublime_plugin.TextCommand):
                     edit = self.view.begin_edit('coder_format')
                     bufferRegion = sublime.Region(0, self.view.size())
                     bufferContent = self.view.substr(bufferRegion)
-                    if not os.path.exists('./coder_format.php'):
+                    if not path.exists('./coder_format.php'):
                         raise Exception("coder_format.php does not exist")
                     p = Popen(['/usr/bin/php', './coder_format.php'], stdin=PIPE, stdout=PIPE)
 
@@ -32,4 +33,4 @@ class CoderFormat(sublime_plugin.TextCommand):
                     self.view.replace(edit, bufferRegion, bufferContent)
                     self.view.end_edit(edit)
                 finally:
-                    os.chdir(original_directory)
+                    chdir(original_directory)
