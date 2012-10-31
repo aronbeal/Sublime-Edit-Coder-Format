@@ -1,5 +1,5 @@
-#CoderFormatOnSave
-This Sublime Text plugin is responsible for applying Drupal coder formatting to eligible files (php by default).  It does so leveraging the Coder module for drupal, part of which is bundled with this plugin.  For more information on the latter, see https://drupal.org/project/coder
+#Coder Format
+This Sublime Text plugin is responsible for applying Drupal coder formatting to eligible files (php by default).  It does so leveraging the Coder module for Drupal, part of which is bundled with this plugin.  For more information on the latter, see https://drupal.org/project/coder
 
 ## Installation
 Note: this package must currently be installed manually; I hope to fix this in the future.
