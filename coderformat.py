@@ -33,7 +33,7 @@ class CoderFormat(sublime_plugin.TextCommand):
             chdir(sublime.packages_path())
             chdir('CoderFormat')
             try:
-                print "Applying coder format to file : ", myfile
+                print "Applying coder format to file : ", current_file
 
                 edit = self.view.begin_edit('coder_format')
                 bufferRegion = sublime.Region(0, self.view.size())
