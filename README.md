@@ -9,7 +9,6 @@ Note: this package
 1. Clone git repo into your packages folder (mine is ~/Library/Application Support/Sublime Text 2/Packages):
 <code>
   $ cd ~/Library/Application Support/Sublime Text 2/Packages
-
   $ git clone https://github.com/aronbeal/Sublime-Edit-Coder-Format
 </code>
 2. Restart Sublime Text 2
