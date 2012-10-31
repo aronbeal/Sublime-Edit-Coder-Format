@@ -2,6 +2,7 @@
 This Sublime Text plugin is responsible for applying Drupal coder formatting to *.php and *.module (as of this version) files.  It does so leveraging the Coder module for drupal, part of which is bundled with this plugin.  For more information on the latter, see https://drupal.org/project/coder
 
 ## Installation
+Note: this package
 
 ### Mac OSX (tested on 10.8)
 
