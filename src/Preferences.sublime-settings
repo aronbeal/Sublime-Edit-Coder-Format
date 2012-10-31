@@ -1,0 +1,4 @@
+{
+  //sets what file suffixes are eligible for coder formatting
+  "allowed_coder_format_suffixes":["php", "module", "install"]
+}

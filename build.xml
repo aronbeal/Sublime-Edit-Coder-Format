@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+-->
+<project basedir="." default="_default" description="Phing extensions" name="Phing">
+	<!-- set global properties for this build -->
+	<property name="version.number" value="${version}"/>
+	<!-- master properties file -->
+	<property file="${user.home}/Shared/build.properties"/>
+	<!-- project specific properties file -->
+	<property file="build.properties"/>
+	<!-- ============================================  -->
+	<!-- Target: default                               -->
+	<!-- ============================================  -->
+	<target depends="deploy.localhost" description="Runs whatever is the default phing build" name="_default"/>
+	<!-- Get timestamp for versioning -->
+	<!-- ============================================  -->
+	<!-- Target: timestamp                             -->
+	<!-- ============================================  -->
+	<target name="timestamp">
+		<tstamp>
+			<format pattern="%s" property="current.time"/>
+		</tstamp>
+		<property name="version.stamp" value="${current.time}"/>
+		<echo msg="Current time: ${current.time}"/>
+		<echo msg="Version stamp: ${version.stamp}"/>
+	</target>
+	<target name="gitdependencies">
+		<gitpull quiet="true"
+    repository="${srcdir}" all="true" />
+  </target>
+	<!-- ============================================  -->
+	<!-- Target: lint                                 -->
+	<!-- ============================================  -->
+	<!--
+		Performs syntax checking on all appropriate filesets.
+	-->
+	<target depends="timestamp" name="lint">
+		<echo msg="Linting all relevant code"/>
+		<phplint haltonfailure="true">
+			<fileset dir="${srcdir}">
+				<include name="*.php"/>
+			</fileset>
+		</phplint>
+	</target>
+	<target depends="timestamp, lint, gitdependencies" name="build">
+		<delete dir="${builddir}" />
+		<copy todir="${builddir}">
+			<fileset dir="${srcdir}" />
+		</copy>
+	</target>
+	<target name="git_commit">
+	</target>
+	<target depends="build" name="deploy.localhost">
+		<copy todir="${user.home}/Library/Application Support/Sublime Text 2/Packages/CoderFormat">
+			<fileset dir="${builddir}" />
+		</copy>
+	</target>
+</project>
