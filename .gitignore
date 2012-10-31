@@ -1,1 +1,6 @@
-*.pyc
+build/
+._*
+.DS_Store
+.Trashes
+dev
+obsolete
