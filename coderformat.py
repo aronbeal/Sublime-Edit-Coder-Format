@@ -9,13 +9,14 @@ from UserString import MutableString
 class CoderFormat(sublime_plugin.TextCommand):
 
     def run(self, edit):
+        print "Coder format running"
         current_view = sublime.active_window().active_view()
         current_file = current_view.file_name()
         if current_file == None:
             print "Please save the file first"
             return
         settings = sublime.load_settings('Preferences.sublime-settings')
-        allowed_suffixes = settings.get('allowed_coder_format_suffixes', ['php'])
+        allowed_suffixes = settings.get('allowed_coder_format_suffixes', ['php','module','inc'])
         regex = []
         regex.append("^.*\.(")
         regex.append(("|".join(allowed_suffixes)))
@@ -31,7 +32,7 @@ class CoderFormat(sublime_plugin.TextCommand):
             #buffer is non-empty
             original_directory = curdir
             chdir(sublime.packages_path())
-            chdir('CoderFormat')
+            chdir('Sublime-Edit-Coder-Format')
             try:
                 print "Applying coder format to file : ", current_file
 
