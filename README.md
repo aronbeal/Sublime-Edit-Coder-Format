@@ -13,7 +13,7 @@ The only key binding set so far is for OSX, which is set to ctrl+c to invoke cod
 
 ##Notes:
 - This plugin requires that php be installed on your system.
-- "Eligible Files" currently consists of files suffixed in 'php','module', or 'inc'.  This setting can be modified by setting the preference 'allowed_coder_format_suffixes' in the module package settings (Preferences->Package Settings->Coder Format on OSX)
+- "Eligible Files" currently consists of files suffixed in 'php','module', or 'inc'.  This setting can be modified by setting the preference 'allowed_coder_format_suffixes' in the module package settings (Preferences->Package Settings->Coder Format on OSX).  See the file "Preferences.sublime-settings" for an example of what this would look like.
 - Current included version is coder_format.inc 7.x-2.0
 
 
