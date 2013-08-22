@@ -8,8 +8,8 @@ Note: this package must currently be installed manually; I hope to fix this in t
 
 1. Clone git repo into your packages folder (mine is ~/Library/Application Support/Sublime Text 2/Packages):
 
-    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages;
-    git clone https://github.com/aronbeal/Sublime-Edit-Coder-Format;
+    `cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages;
+    git clone https://github.com/aronbeal/Sublime-Edit-Coder-Format;`
 
 2. Restart Sublime Text 2
 
