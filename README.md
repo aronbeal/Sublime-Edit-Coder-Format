@@ -1,5 +1,7 @@
 #Coder Format
-This Sublime Text plugin is responsible for applying Drupal coder formatting to eligible files.  It does so leveraging the [Coder](https://drupal.org/project/coder) module for Drupal, part of which is bundled with this plugin. (Current included version is coder_format.inc 7.x-2.0).  This plugin requires that php be installed on your system.
+This Sublime Text plugin is responsible for applying Drupal coder formatting to eligible files.  It does so leveraging the [Coder](https://drupal.org/project/coder) module for Drupal, part of which is bundled with this plugin.
+
+*Warning*:
 
 ## Installation
 The recommended install is via the Package Control:
@@ -7,5 +9,11 @@ The recommended install is via the Package Control:
 - When the list of packages is presented, search for "Coder Format", press enter to install
 
 ##Usage
-Only key binding so far is for OSX, which is set to ctrl+c to invoke coder formatting.  Also available under Tools->Coder Format->Coder Format, or as a quickwindow completion of "Coder Format".  Command is set to work only for .php, .install, and .module file suffixes; this can be changed under the preferences for the module (Preferences->Package Settings->Coder Format on OSX)
+The only key binding set so far is for OSX, which is set to ctrl+c to invoke coder formatting.  Also available under Tools->Coder Format->Coder Format, or as a quickwindow completion of "Coder Format".
+
+##Notes:
+- This plugin requires that php be installed on your system.
+- "Eligible Files" currently consists of files suffixed in 'php','module', or 'inc'.  This setting can be modified by setting the preference 'allowed_coder_format_suffixes' in the module package settings (Preferences->Package Settings->Coder Format on OSX)
+- Current included version is coder_format.inc 7.x-2.0
+
 
