@@ -7,10 +7,10 @@ Note: this package must currently be installed manually; I hope to fix this in t
 ### Mac OSX (tested on 10.8)
 
 1. Clone git repo into your packages folder (mine is ~/Library/Application Support/Sublime Text 2/Packages):
-<code>
-  $ cd ~/Library/Application Support/Sublime Text 2/Packages
-  $ git clone https://github.com/aronbeal/Sublime-Edit-Coder-Format
-</code>
+
+    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages;
+    git clone https://github.com/aronbeal/Sublime-Edit-Coder-Format;
+
 2. Restart Sublime Text 2
 
 ##Usage
