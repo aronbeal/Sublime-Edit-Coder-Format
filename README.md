@@ -1,8 +1,6 @@
 #Coder Format
 This Sublime Text plugin is responsible for applying Drupal coder formatting to eligible files.  It does so leveraging the [Coder](https://drupal.org/project/coder) module for Drupal, part of which is bundled with this plugin.
 
-*Warning*:
-
 ## Installation
 The recommended install is via the Package Control:
 - Press ctrl+shift+p (Windows, Linux) or cmd+shift+p (OS X), start typing “Package” to access Package Manager commands
