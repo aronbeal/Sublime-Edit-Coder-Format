@@ -4,3 +4,4 @@ build/
 .Trashes
 dev
 obsolete
+package-metadata.json
