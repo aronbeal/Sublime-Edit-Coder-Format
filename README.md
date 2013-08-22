@@ -3,7 +3,7 @@ This Sublime Text plugin is responsible for applying Drupal coder formatting to 
 
 ## Installation
 The recommended install is via the Package Control:
-- Press ctrl+shift+p (Windows, Linux) or cmd+shift+p (OS X), start typing “Package” to access Package Manager commands
+- Press ctrl+shift+p (Windows, Linux) or cmd+shift+p (OS X), start typing “Package” to access Package Control commands
 - When the list of packages is presented, search for "Coder Format", press enter to install
 
 ##Usage
