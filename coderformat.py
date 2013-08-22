@@ -45,7 +45,7 @@ class CoderFormat(sublime_plugin.TextCommand):
         bufferContent = bufferContent[0].decode()
         self.view.replace(edit,region,bufferContent)
       finally:
-        print("done")
+        sublime.message_dialog("Coder format applied to file content")
     else:
       print("Not an eligible filetype.  Skipping.")
   def description():
