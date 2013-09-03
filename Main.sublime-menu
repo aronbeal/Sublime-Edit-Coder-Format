@@ -35,7 +35,7 @@
                         [
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/CoderFormat/Base File.sublime-settings"},
+                                "args": {"file": "${packages}/Sublime-Text-Coder-Format/Base File.sublime-settings"},
                                 "caption": "Settings – Default"
                             },
                             {
@@ -46,7 +46,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/CoderFormat/Default (OSX).sublime-keymap",
+                                    "file": "${packages}/Sublime-Text-Coder-Format/Default (OSX).sublime-keymap",
                                     "platform": "OSX"
                                 },
                                 "caption": "Key Bindings – Default"
