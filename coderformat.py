@@ -45,7 +45,7 @@ class CoderFormat(sublime_plugin.TextCommand):
 
         #decode reponse for re-insertion
         bufferContent = bufferContent[0].decode()
-        #print(bufferContent)
+        #Yprint(bufferContent)
         if p.returncode != 0 or bufferContent == '':
           raise Exception("Interprocess communication fail.")
         self.view.replace(edit,region, bufferContent)
