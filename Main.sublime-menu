@@ -1,69 +1,48 @@
-[
-    {
-        "id": "tools",
-        "caption": "Tools",
-        "children":
-        [
-            {
-                "id": "coderformat",
-                "caption": "Coder Format",
-                "children":
-                [
-                    {
-                        "caption": "Coder Format",
-                        "command": "coder_format"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "caption": "Preferences",
-        "mnemonic": "n",
-        "id": "preferences",
-        "children":
-        [
-            {
-                "caption": "Package Settings",
-                "mnemonic": "P",
-                "id": "package-settings",
-                "children":
-                [
-                    {
-                        "caption": "Coder Format",
-                        "children":
-                        [
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/Sublime-Text-Coder-Format/Base File.sublime-settings"},
-                                "caption": "Settings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/User/Base File.sublime-settings"},
-                                "caption": "Settings – User"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/Sublime-Text-Coder-Format/Default (OSX).sublime-keymap",
-                                    "platform": "OSX"
-                                },
-                                "caption": "Key Bindings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
-                                    "platform": "OSX"
-                                },
-                                "caption": "Key Bindings – User"
-                            },
-                            { "caption": "-" }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-]
+[{
+    "id": "tools",
+    "caption": "Tools",
+    "children": [{
+        "id": "sublime_text_coder_format",
+        "caption": "Drupal Coder Format",
+        "command": "coder_format"
+    }]
+}, {
+    "caption": "Preferences",
+    "id": "preferences",
+    "children": [{
+        "caption": "Package Settings",
+        "id": "package-settings",
+        "children": [{
+            "caption": "Drupal Coder Format",
+            "children": [{
+                "command": "open_file",
+                "args": {
+                    "file": "${packages}/Sublime-Text-Coder-Format/Base File.sublime-settings"
+                },
+                "caption": "Settings – Default"
+            }, {
+                "command": "open_file",
+                "args": {
+                    "file": "${packages}/User/Base File.sublime-settings"
+                },
+                "caption": "Settings – User"
+            }, {
+                "command": "open_file",
+                "args": {
+                    "file": "${packages}/Sublime-Text-Coder-Format/Default (OSX).sublime-keymap",
+                    "platform": "OSX"
+                },
+                "caption": "Key Bindings – Default"
+            }, {
+                "command": "open_file",
+                "args": {
+                    "file": "${packages}/User/Default (OSX).sublime-keymap",
+                    "platform": "OSX"
+                },
+                "caption": "Key Bindings – User"
+            }, {
+                "caption": "-"
+            }]
+        }]
+    }]
+}]

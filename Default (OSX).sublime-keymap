@@ -1,3 +1,7 @@
-[
-  { "keys": ["ctrl+c"], "command": "coder_format" }
-]
+/**
+ * https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/customization/key_bindings.html?highlight=keymap
+ */
+[{
+	"keys": ["ctrl+c"],
+	"command": "coder_format"
+}]

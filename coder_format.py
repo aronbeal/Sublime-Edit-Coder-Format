@@ -5,15 +5,16 @@ from os import chdir,curdir,path,access,X_OK
 from subprocess import Popen, PIPE, STDOUT
 
 
-class CoderFormat(sublime_plugin.TextCommand):
+class CoderFormatCommand(sublime_plugin.TextCommand):
   def run(self, edit):
+    print('Executing "coder_format" command');
     if self.view.is_loading():
+      print("Coder format aborted")
       return
     package_dir = sublime.packages_path() + '/Sublime-Text-Coder-Format'
     coder_format_php = package_dir + '/coder_format.php'
     if not path.isfile(coder_format_php) or not access(coder_format_php, X_OK):
       raise Exception("coder_format library '"+coder_format_php+"' does not exist")
-    print("Coder format running")
 
     settings = sublime.load_settings('Preferences.sublime-settings')
     allowed_suffixes = settings.get('allowed_coder_format_suffixes', ['php'])

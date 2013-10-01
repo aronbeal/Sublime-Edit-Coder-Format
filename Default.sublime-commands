@@ -1,6 +1,4 @@
-[
-    {
-        "caption": "Coder Format",
-        "command": "coder_format"
-    }
-]
+[{
+	"caption": "Drupal Coder Format",
+	"command": "coder_format"
+}]
