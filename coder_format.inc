@@ -685,11 +685,11 @@ function coder_format_string($code = '') {
         case T_INCLUDE:
         case T_INCLUDE_ONCE:
         case T_VAR:
+        case T_THROW:
           coder_add_space($result);
           // Append a space.
           $result .= trim($text) . ' ';
           break;
-
         case T_DO:
           $result .= trim($text);
           $in_do_while = TRUE;
@@ -714,10 +714,12 @@ function coder_format_string($code = '') {
           // Append a space.
           $result .= trim($text) . ' ';
           break;
-
+        case T_NAMESPACE:
+        case T_USE:
         case T_ELSE:
         case T_ELSEIF:
-          // Write else and elseif to a new line.
+          // Write else, elseif, namespace, and use declarations
+          // to a new line.
           $result = rtrim($result);
           coder_br($result);
           $result .= trim($text) . ' ';
