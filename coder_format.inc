@@ -272,6 +272,7 @@ function coder_format_string($code = '') {
   // Whitespace controls:
   $in_object    = FALSE;
   $in_at        = FALSE;
+  $in_const     = FALSE;
   $in_php       = FALSE;
   $in_quote     = FALSE;
   $inline_if    = FALSE;
@@ -617,8 +618,9 @@ function coder_format_string($code = '') {
           // Boolean constants (TRUE, FALSE, NULL) are T_STRINGs, but must be
           // written uppercase.
           $text = trim($text);
-          if ($text == 'true' || $text == 'false' || $text == 'null') {
+          if ($text == 'true' || $text == 'false' || $text == 'null' || $in_const) {
             $text = strtoupper($text);
+            $in_const = FALSE;
           }
           // No space after object operator ($foo->bar) and error suppression (@function()).
           if ($in_object || $in_at) {
@@ -634,11 +636,6 @@ function coder_format_string($code = '') {
             $result .= $text;
           }
           $in_variable = TRUE;
-          break;
-
-        case T_CONST:
-          // Constants are written uppercase.
-          $result = rtrim($result) . strtoupper(trim($text));
           break;
 
         case T_ENCAPSED_AND_WHITESPACE:
@@ -724,7 +721,14 @@ function coder_format_string($code = '') {
           coder_br($result);
           $result .= trim($text) . ' ';
           break;
-
+        case T_CONST:
+          // Write else, elseif, namespace, and use declarations
+          // to a new line.
+          $result = rtrim($result);
+          coder_br($result);
+          $result .= trim($text) . ' ';
+          $in_const = TRUE;
+          break;
         case T_CASE:
         case T_DEFAULT:
           $braces_in_case[$switches] = 0;
@@ -808,6 +812,7 @@ function coder_format_string($code = '') {
 
         case T_EXTENDS:
         case T_INSTANCEOF:
+        case T_IMPLEMENTS:
           // Add space before and after 'extends' and 'instanceof'.
           $result = rtrim($result);
           $result .= ' ' . trim($text) . ' ';
